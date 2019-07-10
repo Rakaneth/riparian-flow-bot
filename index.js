@@ -55,9 +55,9 @@ Functions: ${ripInfo.functions}`
 function search(criterion, value) {
     let results = []
     if (criterion == 'memoryusage' || criterion == 'tier') {
-        results = RIPDATA.filter(el => el[criterion] && el[criterion] === parseInt(value, 10))
+        results = RIPDATA.filter(el => typeof (el[criterion]) !== 'undefined' && el[criterion] === parseInt(value, 10))
     } else {
-        results = RIPDATA.filter(el => el[criterion] && el[criterion].includes(value))
+        results = RIPDATA.filter(el => typeof (el[criterion]) !== 'undefined' && el[criterion].includes(value))
     }
     return results.sort((fst, snd) => fst.tier - snd.tier)
 }
@@ -134,6 +134,9 @@ developer
                     } else {
                         msg.channel.send(`No Scripts found with **${criterion}** = **${value}**`)
                     }
+                    break
+                default:
+                    msg.channel.send("Invalid command.")
                     break
             }
         }
