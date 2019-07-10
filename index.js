@@ -41,8 +41,12 @@ Functions: ${ripInfo.functions}`
 
    Active: ${ripInfo.active}
 
-     Once: ${ripInfo.once}
-`
+     Once: ${ripInfo.once}`
+    }
+    if (ripInfo.special) {
+        base += `
+        
+  Special: ${ripInfo.special}`
     }
     return base + "```"
 }
