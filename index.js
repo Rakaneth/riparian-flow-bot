@@ -1,12 +1,21 @@
 const Discord = require('discord.js')
 const MongoClient = require('mongodb').MongoClient
 const bot = new Discord.Client()
-const secrets = require('./config.json')
+//const secrets = require('./config.json')
 let RIPDATA = []
+
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
+let user = process.env.MDB_USER
+let pass = process.env.MDB_PASS
+let token = process.env.BOT_TOKEN
+
 
 function getRipFlow() {
     return new Promise((resolve, reject) => {
-        let uri = `mongodb://${secrets.user}:${secrets.pass}@ds147125.mlab.com:47125/sundry`
+        let uri = `mongodb://${user}:${pass}@ds147125.mlab.com:47125/sundry`
         MongoClient.connect(uri, { useNewUrlParser: true }, (err, db) => {
             if (err) {
                 reject(err)
@@ -146,4 +155,4 @@ developer
 
 
 
-bot.login(secrets.token)
+bot.login(token)
