@@ -1,0 +1,8 @@
+#VS Code
+.vs/
+
+#node
+node_modules/
+
+#secrets
+config.json

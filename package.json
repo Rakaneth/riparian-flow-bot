@@ -1,0 +1,22 @@
+{
+  "name": "riparian-flow-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot for the After the End server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rakaneth/riparian-flow-bot.git"
+  },
+  "author": "Rakaneth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rakaneth/riparian-flow-bot/issues"
+  },
+  "homepage": "https://github.com/Rakaneth/riparian-flow-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
