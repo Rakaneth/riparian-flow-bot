@@ -70,6 +70,7 @@ bot.on('ready', () => {
         .catch((err) => {
             throw err
         })
+    bot.user.setActivity("!help for commands")
 })
 
 bot.on('message', msg => {
