@@ -24,20 +24,24 @@ function getRipFlow() {
 
 function prettyPrint(ripInfo) {
     let base = ` \`\`\`
-Name: ${ripInfo.title}
-Tier: ${ripInfo.tier}
-Memory: ${ripInfo.memoryusage}
-Use Case: ${ripInfo.usecase}
-Cost: ${ripInfo.cost}
-Delivery: ${ripInfo.delivery}
-Mode: ${ripInfo.mode}
-Requires: ${ripInfo.requirements || 'Basic'} Codin'
+     Name: ${ripInfo.title}
+     Tier: ${ripInfo.tier}
+   Memory: ${ripInfo.memoryusage}
+ Use Case: ${ripInfo.usecase}
+     Cost: ${ripInfo.cost}
+ Delivery: ${ripInfo.delivery}
+     Mode: ${ripInfo.mode}
+ Requires: ${ripInfo.requirements || 'Basic'} Codin'${(ripInfo.tier == 6 ? ", HOTSIM" : "")}
+
 Functions: ${ripInfo.functions}`
     if (ripInfo.tier == 6) {
         base += `
-Passive: ${ripInfo.passive}
-Active: ${ripInfo.active}
-Once: ${ripInfo.once}
+
+  Passive: ${ripInfo.passive}
+
+   Active: ${ripInfo.active}
+
+     Once: ${ripInfo.once}
 `
     }
     return base + "```"
