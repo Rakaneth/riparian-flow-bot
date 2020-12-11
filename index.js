@@ -15,7 +15,8 @@ let token = process.env.BOT_TOKEN
 
 function getRipFlow() {
     return new Promise((resolve, reject) => {
-        let uri = `mongodb://${user}:${pass}@ds147125.mlab.com:47125/sundry`
+        let uri = `mongodb+srv://${user}:${pass}@sundry.s0q9g.mongodb.net/sundry?retryWrites=true&w=majority`
+        //`mongodb://${user}:${pass}@ds147125.mlab.com:47125/sundry`
         MongoClient.connect(uri, { useNewUrlParser: true }, (err, db) => {
             if (err) {
                 reject(err)
